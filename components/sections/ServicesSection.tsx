@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from 'next/image';
+import { motion } from "framer-motion";
 
 export interface ServicesSectionDict {
     services: {
@@ -13,7 +14,7 @@ export interface ServicesSectionDict {
     };
 }
 
-export function ServicesSection({dict}: { dict: ServicesSectionDict }) {
+export function ServicesSection({ dict }: { dict: ServicesSectionDict }) {
     return (
         <section
             id="services"
@@ -21,7 +22,7 @@ export function ServicesSection({dict}: { dict: ServicesSectionDict }) {
         >
             {/* Headline */}
             <div className="text-center px-4 mb-12">
-                <h2 className="text-[var(--primary)] text-4xl sm:text-5xl md:text-6xl tracking-tight leading-tight uppercase">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl uppercase text-[var(--primary)] mb-6">
                     {dict.services.headline}
                 </h2>
             </div>
@@ -29,13 +30,16 @@ export function ServicesSection({dict}: { dict: ServicesSectionDict }) {
             {/* Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full max-w-7xl px-4">
                 {dict.services.services.map((service, index) => (
-                    <div
+                    <motion.div
                         key={index}
-                        className="flex flex-col items-center text-center gap-4 p-8 rounded-3xl border border-[var(--border)] shadow-md hover:shadow-xl transition-all duration-300 backdrop-blur-xl bg-white/10 dark:bg-white/5"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col items-center text-center gap-4 p-8 rounded-3xl border border-[var(--border)] shadow-md hover:shadow-xl transition-all duration-150 ease-in-out backdrop-blur-xl bg-white/10 dark:bg-white/5"
                     >
-                        {/* Rounded icon image */}
-                        <div
-                            className="w-36 h-36 relative rounded-full overflow-hidden shadow-lg">
+                        {/* Icon */}
+                        <div className="w-36 h-36 relative rounded-full overflow-hidden shadow-lg">
                             <Image
                                 src={service.image}
                                 alt={`${service.title} icon`}
@@ -44,16 +48,21 @@ export function ServicesSection({dict}: { dict: ServicesSectionDict }) {
                             />
                         </div>
 
-                        {/* Title */}
-                        <h3 className="roboto text-2xl font-semibold text-[var(--primary)] drop-shadow-sm">
+                        {/* Title (animated within card) */}
+                        <motion.h3
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: index * 0.15 + 0.2 }}
+                            className="roboto text-2xl font-semibold text-[var(--primary)] drop-shadow-sm"
+                        >
                             {service.title}
-                        </h3>
+                        </motion.h3>
 
                         {/* Description */}
                         <p className="text-base text-[var(--foreground)] opacity-90 leading-relaxed">
                             {service.description}
                         </p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

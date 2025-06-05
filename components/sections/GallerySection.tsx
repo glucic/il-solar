@@ -1,3 +1,4 @@
+// components/GallerySection.tsx
 "use client";
 
 import {Carousel} from "@/components/ui/carousel";

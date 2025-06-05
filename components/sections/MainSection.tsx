@@ -1,3 +1,4 @@
+// components/MainSection.tsx
 "use client";
 
 import {motion} from "motion/react";
@@ -17,8 +18,6 @@ export interface MainSectionDict {
 export function MainSection({dict}: { dict: MainSectionDict }) {
     return (
         <section id="main" className="relative w-full min-h-screen text-white">
-            <Navbar/>
-
             {/* Background image layer (no pointer interference) */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
                 <Image
@@ -36,8 +35,8 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
                     {dict.main.headline.split(" ").map((word, index) => (
                         <motion.span
                             key={index}
-                            initial={{opacity: 0, filter: "blur(4px)", y: 10}}
-                            animate={{opacity: 1, filter: "blur(0px)", y: 0}}
+                            initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+                            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                             transition={{
                                 duration: 0.3,
                                 delay: index * 0.1,
@@ -48,6 +47,18 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
                             {word}
                         </motion.span>
                     ))}
+                    <motion.span
+                        initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+                        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                        transition={{
+                            duration: 0.3,
+                            delay: dict.main.headline.split(" ").length * 0.1,
+                            ease: "easeInOut",
+                        }}
+                        className="inline-block text-[var(--accent)] ml-2"
+                    >
+                        IL-Solar
+                    </motion.span>
                 </h1>
 
                 <motion.p
@@ -96,14 +107,3 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
         </section>
     );
 }
-
-const Navbar = () => {
-    return (
-        <nav
-            className="w-full flex justify-between items-center bg-[var(--primary)] px-4 py-4 sm:px-6 md:px-8 text-[var(--primary-foreground)]">
-            <div className="flex items-center gap-2">
-                <h1 className="text-lg font-bold md:text-2xl">IL-Solar</h1>
-            </div>
-        </nav>
-    );
-};
