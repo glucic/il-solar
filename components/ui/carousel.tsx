@@ -1,6 +1,7 @@
 "use client";
 import {IconArrowNarrowRight} from "@tabler/icons-react";
-import {useState, useRef, useId, useEffect} from "react";
+import {useState, useId} from "react";
+import Image from 'next/image';
 
 interface SlideData {
     src: string;
@@ -21,7 +22,7 @@ const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
             className="w-screen h-screen flex items-center justify-center"
             onClick={() => handleSlideClick(index)}
         >
-            <img
+            <Image
                 className="w-full h-full object-cover transition-opacity duration-500"
                 style={{opacity: current === index ? 1 : 0.5}}
                 alt={`slide-${index}`}
