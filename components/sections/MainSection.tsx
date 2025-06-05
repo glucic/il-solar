@@ -21,12 +21,12 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
             {/* Background image layer (no pointer interference) */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
                 <Image
-                    src="/solar_panel_muted_gradient.png"
+                    src="/images/8d6a9818-82e2-4b76-b767-283df978fdbf.png"
                     alt="Background"
                     fill
                     className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black/60"/>
+                <div className="absolute inset-0 bg-black/70"/>
             </div>
 
             {/* Content */}

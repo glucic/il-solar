@@ -6,17 +6,29 @@ import {Carousel} from "@/components/ui/carousel";
 export function GallerySection() {
     const slideData = [
         {
-            src: "https://static.wixstatic.com/media/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg/v1/fill/w_442,h_589,q_90,enc_avif,quality_auto/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg 1x, https://static.wixstatic.com/media/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg/v1/fill/w_884,h_1178,q_90,enc_avif,quality_auto/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg 2x, https://static.wixstatic.com/media/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg/v1/fill/w_1326,h_1767,q_90,enc_avif,quality_auto/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg 3x, https://static.wixstatic.com/media/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg/v1/fill/w_1768,h_2356,q_90,enc_avif,quality_auto/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg 4x, https://static.wixstatic.com/media/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg/v1/fill/w_2210,h_2945,q_90,enc_avif,quality_auto/1d7920_01b4e2a925634fbda6ab352525632515~mv2.jpg 5x",
+            src: "/images/gallery/4e60b67d-976e-4657-82a9-123cd53bac5b.png",
         },
         {
-            src: "https://static.wixstatic.com/media/1d7920_b7448bea42f140cd91187013f516f731~mv2.jpg/v1/fill/w_442,h_589,q_90,enc_avif,quality_auto/1d7920_b7448bea42f140cd91187013f516f731~mv2.jpg",
+            src: "/images/gallery/b64aaebb-ed49-49ad-bd7a-3f658110c2de.png"
         },
         {
-            src: "https://static.wixstatic.com/media/1d7920_953cb7e498974b23a4056bd7c6ea1496~mv2.jpg/v1/fill/w_442,h_589,q_90,enc_avif,quality_auto/1d7920_953cb7e498974b23a4056bd7c6ea1496~mv2.jpg",
+            src: "/images/gallery/10d00582-a22c-4a22-9f8b-2c736627acf8.png"
         },
         {
-            src: "https://static.wixstatic.com/media/1d7920_953cb7e498974b23a4056bd7c6ea1496~mv2.jpg/v1/fill/w_442,h_589,q_90,enc_avif,quality_auto/1d7920_953cb7e498974b23a4056bd7c6ea1496~mv2.jpg",
+            src: "/images/gallery/2f155eb3-5155-466d-ac3d-9e9d99398ae9.png"
         },
+        {
+            src: "/images/gallery/41400cab-8f06-4e03-b009-6970b23242e3.png"
+        },
+        {
+            src: "/images/gallery/f258027f-68b5-43ea-b823-468c8dbfe391.png"
+        },
+        {
+            src: "/images/gallery/1f066ab9-1c97-4b6d-9c67-08911a364b55.png"
+        },
+        {
+            src: "/images/gallery/affb0120-b222-4887-b5ec-de7414789f74.png"
+        }
     ];
     return (
         <section id="gallery" className="relative overflow-hidden w-full h-full py-20">

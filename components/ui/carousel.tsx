@@ -14,26 +14,41 @@ interface SlideProps {
     handleSlideClick: (index: number) => void;
 }
 
-const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
-    const {src} = slide;
+const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
+    const { src } = slide;
 
     return (
         <li
-            className="w-screen h-screen flex items-center justify-center"
+            className="relative w-screen h-screen flex items-center justify-center"
             onClick={() => handleSlideClick(index)}
         >
-            <Image
-                className="w-full h-full object-cover transition-opacity duration-500"
-                style={{opacity: current === index ? 1 : 0.5}}
-                alt={`slide-${index}`}
-                src={src}
-                loading="eager"
-                decoding="sync"
-            />
+            {/* Preview button */}
+            <a
+                href={src}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()} // Prevents slide change on click
+                className="absolute top-6 right-6 z-30 text-white text-sm md:text-base px-5 py-3 rounded-xl font-semibold shadow-lg hover:bg-opacity-90 transition-all duration-200"
+            >
+                🔍 Vorschau
+            </a>
+
+            {/* Image container */}
+            <div className="absolute inset-0">
+                <Image
+                    src={src}
+                    alt={`slide-${index}`}
+                    fill
+                    className={`object-cover transition-opacity duration-500 ${
+                        current === index ? "opacity-100" : "opacity-50"
+                    }`}
+                    loading="eager"
+                    decoding="sync"
+                />
+            </div>
         </li>
     );
 };
-
 interface CarouselControlProps {
     type: string;
     title: string;

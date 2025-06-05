@@ -21,16 +21,16 @@ export function ComparisonSection() {
 
             <div className="max-w-7xl mx-auto flex flex-col items-center gap-16">
                 <Compare
-                    firstImage="/images/img_1.png"
-                    secondImage="/images/img_2.png"
+                    firstImage="/images/9c640042-b5f8-4357-a349-b57c957faa1e.png"
+                    secondImage="/images/9c85e066-a33d-4a82-9800-e878b3e0c6a0.png"
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     className="w-full max-w-[900px] h-[500px] md:h-[700px] rounded-xl shadow-lg"
                     slideMode="hover"
                 />
                 <Compare
-                    firstImage="/images/img_3.png"
-                    secondImage="/images/img_4.png"
+                    firstImage="/images/1b2a5753-8a3f-497a-a959-aa1c8d837534.png"
+                    secondImage="/images/607473df-3add-49a7-83f5-f8693e54444a.png"
                     firstImageClassName="object-cover object-left-top"
                     secondImageClassname="object-cover object-left-top"
                     className="w-full max-w-[900px] h-[500px] md:h-[700px] rounded-xl shadow-lg"

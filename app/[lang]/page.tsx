@@ -33,7 +33,7 @@ export default async function Page({
                 <WhySection dict={dict}/>
                 <section className="relative min-h-screen w-full h-[60vh] mt-24 overflow-hidden">
                     <Image
-                        src="/images/img_5.png"
+                        src="/images/8aea016e-7957-4c15-a647-4f770bd18b0f.png"
                         alt="Section divider"
                         fill
                         className="object-cover object-center"
@@ -56,7 +56,7 @@ export default async function Page({
                         loop
                         playsInline
                     >
-                        <source src="/videos/solar_showcase.mp4" type="video/mp4"/>
+                        <source src="/videos/e4aa3dae-e43e-436c-9656-20cca811b131.mp4" type="video/mp4"/>
                         Your browser does not support the video tag.
                     </video>
 
