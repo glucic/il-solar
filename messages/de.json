@@ -1,3 +1,59 @@
 {
-  "test": "DE"
+  "main": {
+    "headline": "Willkommen bei IL-Solar",
+    "subtext": "IL-Solar ist Ihr zuverlässiger Partner für die Reinigung und Wartung von Photovoltaik Anlagen.",
+    "about": "Seit 2023 bieten wir unseren Kunden einen erstklassigen Service.",
+    "team": "Unser erfahrenes Team kümmert sich um die spezifischen Anforderungen Ihrer Anlage und sorgt für eine optimale Leistung. Kontaktieren Sie uns noch heute und wir erstellen Ihnen ein persönliches Angebot!",
+    "services": "Unsere Leistungen",
+    "contact": "Kontaktieren Sie uns"
+  },
+  "why": {
+    "headline": "Warum sollte Ich meine Anlage Reinigen lassen?",
+    "reasons": [
+      {
+        "title": "01",
+        "description": "Effizienzsteigerung: Schmutz, Staub, Laub und andere Ablagerungen können die Leistung der Solarmodule erheblich beeinträchtigen. Eine regelmäßige Reinigung sorgt dafür, dass die Module optimal arbeiten und somit die Energieproduktion maximiert wird."
+      },
+      {
+        "title": "02",
+        "description": "Langfristige Werterhaltung: Eine saubere PV-Anlage hat eine längere Lebensdauer. Ablagerungen können zu Schäden an den Modulen führen, die im schlimmsten Fall kostspielige Reparaturen oder einen vorzeitigen Austausch notwendig machen."
+      },
+      {
+        "title": "03",
+        "description": "Sicherheitsaspekte: Professionelle Reinigungsdienste sind geschult und ausgestattet, um die Sicherheit während der Reinigung zu gewährleisten. Arbeiten in Höhenlagen und der Umgang mit elektrischen Anlagen sollten von Fachleuten durchgeführt werden, um Unfälle zu vermeiden."
+      },
+      {
+        "title": "04",
+        "description": "Zugang zu schwer erreichbaren Stellen: Professionelle Dienstleister haben das nötige Equipment und die Erfahrung, um auch schwierige Bereiche zu reinigen, die für Laien möglicherweise nicht zugänglich sind."
+      }
+    ]
+  },
+  "services": {
+    "headline": "Unsere Leistungen",
+    "services": [
+      {
+        "title": "Kundenberatung",
+        "description": "Bei uns steht die Zufriedenheit unserer Kunden an erster Stelle. Wir bieten einen erstklassigen Service und gehen aktiv auf die Bedürfnisse unserer Kunden ein. In unseren Kundengesprächen legen wir großen Wert auf eine persönliche und individuelle Beratung, um sicherzustellen, dass wir die bestmögliche Lösung für jeden Kunden finden.",
+        "image": "/img_6.png"
+      },
+      {
+        "title": "Reinigung",
+        "description": "Unsere PV-Reinigungsdienste zeichnen sich durch den Einsatz der modernsten und effektivsten Geräte auf dem Markt aus. Mit innovativer Technologie und einem erfahrenen Team sorgen wir für eine gründliche und schonende Reinigung Ihrer Photovoltaikanlage. Durch unsere professionelle Reinigung maximieren wir die Leistung und Effizienz Ihrer Anlage, um Ihnen eine optimale Energieausbeute zu garantieren. Verlassen Sie sich auf uns für eine zuverlässige und qualitativ hochwertige PV-Reinigung.",
+        "image": "/img_7.png"
+      },
+      {
+        "title": "Wartungen",
+        "description": "Unser Service umfasst nicht nur die Reinigung, sondern auch umfassende Wartungsleistungen für PV-Anlagen. Dazu gehören die Kontrolle der Panels, Überprüfung der Verkabelung und Inspektion des Montagesystems. Mit unserem professionellen Wartungsservice sorgen wir dafür, dass Ihre PV-Anlage optimal funktioniert und langfristig effizient arbeitet. Verlassen Sie sich auf unser erfahrenes Team, um die Leistung und Langlebigkeit Ihrer Anlage zu gewährleisten.",
+        "image": "/img_8.png"
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Kontakt aufnehmen",
+    "phoneNumber": "+43 6606129856",
+    "email": "office@il-solar.net",
+    "firstname": "Vorname",
+    "lastname": "Nachname",
+    "message": "Nachricht"
+  }
 }

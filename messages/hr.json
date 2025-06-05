@@ -1,3 +1,59 @@
 {
-  "test": "HR"
+  "main": {
+    "headline": "Dobrodošli u IL-Solar",
+    "subtext": "IL-Solar je vaš pouzdan partner za čišćenje i održavanje fotonaponskih sustava.",
+    "about": "Od 2023. godine pružamo našim klijentima vrhunsku uslugu.",
+    "team": "Naš iskusni tim brine se o specifičnim zahtjevima vašeg sustava i osigurava optimalan učinak. Kontaktirajte nas još danas i pripremit ćemo vam osobnu ponudu!",
+    "services": "Naše usluge",
+    "contact": "Kontaktirajte nas"
+  },
+  "why": {
+    "headline": "Zašto bih trebao/la čistiti svoj sustav?",
+    "reasons": [
+      {
+        "title": "01",
+        "description": "Povećanje učinkovitosti: Prljavština, prašina, lišće i drugi ostaci mogu značajno smanjiti učinkovitost solarnih panela. Redovito čišćenje osigurava optimalan rad modula i time maksimizira proizvodnju energije."
+      },
+      {
+        "title": "02",
+        "description": "Dugoročno očuvanje vrijednosti: Čist fotonaponski sustav ima duži vijek trajanja. Naslage mogu uzrokovati oštećenja na modulima, što u najgorem slučaju može dovesti do skupih popravaka ili prijevremene zamjene."
+      },
+      {
+        "title": "03",
+        "description": "Sigurnosni aspekti: Profesionalne usluge čišćenja obučene su i opremljene za sigurno izvođenje čišćenja. Radovi na visini i rukovanje električnim instalacijama trebaju biti obavljeni od strane stručnjaka kako bi se izbjegle nezgode."
+      },
+      {
+        "title": "04",
+        "description": "Pristup teško dostupnim mjestima: Profesionalni pružatelji usluga imaju potrebnu opremu i iskustvo za čišćenje i teško dostupnih područja koja možda nisu dostupna laicima."
+      }
+    ]
+  },
+  "services": {
+    "headline": "Naše usluge",
+    "services": [
+      {
+        "title": "Savjetovanje s klijentima",
+        "description": "Zadovoljstvo naših klijenata nam je na prvom mjestu. Pružamo vrhunsku uslugu i aktivno se prilagođavamo potrebama klijenata. U razgovorima s klijentima stavljamo poseban naglasak na osobno i individualno savjetovanje kako bismo pronašli najbolje moguće rješenje za svakog klijenta.",
+        "image": "/img_6.png"
+      },
+      {
+        "title": "Čišćenje",
+        "description": "Naše usluge čišćenja fotonaponskih sustava odlikuju se korištenjem najsuvremenije i najučinkovitije opreme na tržištu. Uz inovativnu tehnologiju i iskusan tim osiguravamo temeljito i nježno čišćenje vašeg fotonaponskog sustava. Našom profesionalnom uslugom čišćenja maksimiziramo učinkovitost vašeg sustava kako bismo vam osigurali optimalan prinos energije. Oslonite se na nas za pouzdano i kvalitetno čišćenje.",
+        "image": "/img_7.png"
+      },
+      {
+        "title": "Održavanje",
+        "description": "Naša usluga obuhvaća ne samo čišćenje, već i sveobuhvatno održavanje fotonaponskih sustava. To uključuje provjeru panela, pregled ožičenja i inspekciju montažnog sustava. Našim profesionalnim servisom održavanja osiguravamo optimalan rad i dugoročnu učinkovitost vašeg sustava. Vjerujte našem iskusnom timu kako biste osigurali dugovječnost i učinkovitost vašeg sustava.",
+        "image": "/img_8.png"
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Kontakt aufnehmen",
+    "phoneNumber": "+43 6606129856",
+    "email": "office@il-solar.net",
+    "firstname": "Vorname",
+    "lastname": "Nachname",
+    "message": "Nachricht"
+  }
 }

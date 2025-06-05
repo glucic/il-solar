@@ -1,6 +1,16 @@
 // app/[lang]/page.tsx
 import {getDictionary} from './dictionaries';
 import {ThemeProvider} from 'next-themes';
+import {
+    ComparisonSection,
+    ContactSection,
+    GallerySection,
+    MainSection,
+    ServicesSection,
+    WhySection
+} from '@/components/sections';
+import Image from "next/image";
+import React from "react";
 
 export async function generateStaticParams() {
     return [{lang: 'de'}, {lang: 'hr'}];
@@ -17,7 +27,12 @@ export default async function Page({
     return (
         <div>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-                <h2>{dict.test}</h2>
+                <MainSection dict={dict}/>
+                <WhySection dict={dict}/>
+                <ComparisonSection/>
+                <ServicesSection dict={dict}/>
+                <GallerySection/>
+                <ContactSection dict={dict} />
             </ThemeProvider>
         </div>
     );

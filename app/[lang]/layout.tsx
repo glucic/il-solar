@@ -1,12 +1,13 @@
 // app/[lang]/layout.tsx
 import type {Metadata} from "next";
-import {Geist_Mono} from "next/font/google";
+import {Roboto} from "next/font/google";
 import "@/app/globals.css";
 import {ReactNode} from "react";
 
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const roboto = Roboto({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '700'],
+    variable: '--font-roboto',
 });
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default async function LocaleLayout({
     const {lang} = await params;
 
     return (
-        <html lang={lang} className={`${geistMono.variable} scroll-smooth`} suppressHydrationWarning>
+        <html lang={lang} className={`${roboto.variable} scroll-smooth`} suppressHydrationWarning>
         <body className="font-sans antialiased bg-[var(--background)] text-[var(--foreground)]">{children}</body>
         </html>
     );
