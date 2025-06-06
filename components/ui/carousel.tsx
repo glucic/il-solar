@@ -14,8 +14,8 @@ interface SlideProps {
     handleSlideClick: (index: number) => void;
 }
 
-const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
-    const { src } = slide;
+const Slide = ({slide, index, current, handleSlideClick}: SlideProps) => {
+    const {src} = slide;
 
     return (
         <li
@@ -49,6 +49,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         </li>
     );
 };
+
 interface CarouselControlProps {
     type: string;
     title: string;
@@ -98,14 +99,44 @@ export function Carousel({slides}: CarouselProps) {
         setCurrent(index);
     };
 
+    const [startX, setStartX] = useState<number | null>(null);
+    const [endX, setEndX] = useState<number | null>(null);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setStartX(e.touches[0].clientX);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        setEndX(e.touches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (startX !== null && endX !== null) {
+            const distance = startX - endX;
+            const threshold = 50; // minimum px swipe to trigger
+
+            if (distance > threshold) handleNextClick(); // swipe left
+            else if (distance < -threshold) handlePreviousClick(); // swipe right
+        }
+
+        setStartX(null);
+        setEndX(null);
+    };
+
     return (
-        <div className="relative w-screen h-screen overflow-hidden" aria-labelledby={`carousel-heading-${id}`}>
+        <div
+            className="relative w-screen h-screen overflow-hidden"
+            aria-labelledby={`carousel-heading-${id}`}
+        >
             <ul
-                className="flex transition-transform duration-700 ease-in-out"
+                className="flex transition-transform duration-700 ease-in-out touch-pan-x"
                 style={{
                     transform: `translateX(-${current * 100}vw)`,
                     width: `${slides.length * 100}vw`,
                 }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
             >
                 {slides.map((slide, index) => (
                     <Slide

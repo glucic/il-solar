@@ -28,6 +28,8 @@ export function ContactSection({dict}: { dict: ContactDict }) {
         message: "",
     });
 
+    const [submitted, setSubmitted] = useState(false);
+
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
@@ -37,7 +39,8 @@ export function ContactSection({dict}: { dict: ContactDict }) {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log("Submitted", form);
-        alert("Message sent!");
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 3000); // Hide message after 3s
     };
 
     return (
@@ -47,7 +50,7 @@ export function ContactSection({dict}: { dict: ContactDict }) {
         >
             <motion.div
                 initial={{opacity: 0, y: 20}}
-                animate={{opacity: 1, y: [20, -5, 0]}}
+                whileInView={{opacity: 1, y: 0}}
                 transition={{duration: 0.5}}
             >
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 uppercase">
@@ -59,8 +62,8 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                 <motion.form
                     onSubmit={handleSubmit}
                     initial={{opacity: 0, x: 20}}
-                    animate={{opacity: 1, x: [20, -5, 0]}}
-                    transition={{duration: 0.6, delay: 0.4}}
+                    whileInView={{opacity: 1, x: 0}}
+                    transition={{duration: 0.6, delay: 0.2}}
                     className="space-y-6 w-full max-w-2xl"
                 >
                     <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -73,7 +76,7 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                                 value={form.firstName}
                                 onChange={handleChange}
                                 required
-                                className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:placeholder-[var(--accent)] focus:outline-none focus:border-[var(--primary)]"
+                                className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
                             />
                         </LabelInputContainer>
                         <LabelInputContainer>
@@ -85,7 +88,7 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                                 value={form.lastName}
                                 onChange={handleChange}
                                 required
-                                className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:placeholder-[var(--accent)] focus:outline-none focus:border-[var(--primary)]"
+                                className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
                             />
                         </LabelInputContainer>
                     </div>
@@ -99,7 +102,7 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                             value={form.email}
                             onChange={handleChange}
                             required
-                            className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:placeholder-[var(--accent)] focus:outline-none focus:border-[var(--primary)]"
+                            className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
                         />
                     </LabelInputContainer>
 
@@ -112,50 +115,56 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                             onChange={handleChange}
                             rows={6}
                             required
-                            className="w-full px-4 py-3 text-base rounded-md border-none bg-white text-[var(--primary)]
-             placeholder:text-neutral-400 focus:placeholder-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]
-             transition resize-none"
+                            className="w-full px-4 py-3 text-base rounded-md bg-white text-[var(--primary)]
+                            placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-none transition"
                         />
                     </LabelInputContainer>
 
+                    {submitted && (
+                        <motion.p
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            transition={{duration: 0.3}}
+                            className="text-green-200 font-medium"
+                        >
+                            Danke! Ihre Nachricht wurde gesendet.
+                        </motion.p>
+                    )}
+
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-6">
                         {/* Icons */}
-                        <div className="flex items-center gap-6">
-                            <a
-                                href="https://facebook.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white text-3xl hover:text-[var(--accent)] transition"
-                            >
-                                <FaFacebookF/>
-                            </a>
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white text-3xl hover:text-[var(--accent)] transition"
-                            >
-                                <FaInstagram/>
-                            </a>
-                            <a
-                                href="https://linkedin.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-white text-3xl hover:text-[var(--accent)] transition"
-                            >
-                                <FaLinkedinIn/>
-                            </a>
+                        <div className="flex items-center gap-6 text-white text-3xl">
+                            {[{
+                                icon: FaFacebookF, href: "https://facebook.com"
+                            }, {
+                                icon: FaInstagram, href: "https://instagram.com"
+                            }, {
+                                icon: FaLinkedinIn, href: "https://linkedin.com"
+                            }].map(({icon: Icon, href}, i) => (
+                                <motion.a
+                                    key={i}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{scale: 1.2}}
+                                    transition={{type: "spring", stiffness: 300}}
+                                >
+                                    <Icon className="hover:text-[var(--accent)] transition"/>
+                                </motion.a>
+                            ))}
                         </div>
 
                         {/* Button */}
-                        <button
+                        <motion.button
                             type="submit"
-                            className="relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-[var(--accent)] to-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+                            whileHover={{scale: 1.05}}
+                            whileTap={{scale: 0.95}}
+                            className="relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-[var(--accent)] to-orange-500 px-6 py-3 text-lg font-semibold text-white shadow-md transition-all duration-300"
                         >
-                            Send
+                            Senden
                             <SendHorizonal className="ml-2 h-5 w-5"/>
-                            <span className="absolute inset-0 rounded-lg ring-1 ring-white/10"></span>
-                        </button>
+                            <span className="absolute inset-0 rounded-lg ring-1 ring-white/10"/>
+                        </motion.button>
                     </div>
                 </motion.form>
             </div>
@@ -169,10 +178,6 @@ const LabelInputContainer = ({
                              }: {
     children: React.ReactNode;
     className?: string;
-}) => {
-    return (
-        <div className={cn("flex w-full flex-col", className)}>
-            {children}
-        </div>
-    );
-};
+}) => (
+    <div className={cn("flex w-full flex-col", className)}>{children}</div>
+);

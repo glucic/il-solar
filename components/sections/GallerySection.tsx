@@ -2,6 +2,7 @@
 "use client";
 
 import {Carousel} from "@/components/ui/carousel";
+import {motion} from "framer-motion";
 
 export function GallerySection() {
     const slideData = [
@@ -31,8 +32,24 @@ export function GallerySection() {
         }
     ];
     return (
-        <section id="gallery" className="relative overflow-hidden w-full h-full py-20">
-            <Carousel slides={slideData}/>
+        <section
+            id="gallery"
+            className="relative w-full pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20 bg-[var(--background)] text-[var(--foreground)]"
+        >
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="px-4 sm:px-6 md:px-8 text-center mb-12"
+            >
+                <h2 className="text-4xl sm:text-5xl md:text-6xl uppercase text-[var(--primary)]">
+                    Galerie
+                </h2>
+            </motion.div>
+
+            {/* Carousel outside content wrapper */}
+            <Carousel slides={slideData} />
         </section>
     );
 }

@@ -1,19 +1,24 @@
 // app/[lang]/layout.tsx
-import type {Metadata} from "next";
-import {Roboto} from "next/font/google";
 import "@/app/globals.css";
+import {CookiePreferencesProvider} from "@/components/elements/CookiePreferenceContextProvider";
 import {ReactNode} from "react";
-import { CookiePreferencesProvider } from "@/components/elements/CookiePreferenceContextProvider";
+import {Roboto} from "next/font/google";
+import {Metadata} from "next";
 
 const roboto = Roboto({
-    subsets: ['latin'],
-    weight: ['300', '400', '500', '700'],
-    variable: '--font-roboto',
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "700"],
+    variable: "--font-roboto",
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-    title: "IL-Solar",
-    description: "IL-Solar ist Ihr zuverlässiger Partner für die Reinigung und Wartung von Photovoltaik Anlagen",
+    title: "IL-Solar – Photovoltaik Reinigung & Wartung",
+    description:
+        "Professionelle Reinigung & Wartung von Photovoltaikanlagen in Österreich. Steigern Sie Ihre Effizienz mit IL-Solar.",
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export async function generateStaticParams() {
@@ -30,12 +35,12 @@ export default async function LocaleLayout({
     const {lang} = await params;
 
     return (
-        <html lang={lang} className={`${roboto.variable} scroll-smooth`} suppressHydrationWarning>
-            <body className="font-sans antialiased bg-[var(--background)] text-[var(--foreground)]">
-            <CookiePreferencesProvider>
-                {children}
-            </CookiePreferencesProvider>
-            </body>
+        <html lang={lang} suppressHydrationWarning>
+        <body className={`${roboto.variable} bg-white text-black`}>
+        <CookiePreferencesProvider>
+            {children}
+        </CookiePreferencesProvider>
+        </body>
         </html>
     );
 }
