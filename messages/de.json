@@ -1,9 +1,9 @@
 {
   "nav": {
-    "main": "Start",
     "why": "Warum",
     "comparison": "Vergleich",
     "services": "Leistungen",
+    "projects": "References",
     "gallery": "Galerie",
     "contact": "Kontakt"
   },
@@ -53,6 +53,35 @@
         "title": "Wartungen",
         "description": "Unser Service umfasst nicht nur die Reinigung, sondern auch umfassende Wartungsleistungen für PV-Anlagen. Dazu gehören die Kontrolle der Panels, Überprüfung der Verkabelung und Inspektion des Montagesystems. Mit unserem professionellen Wartungsservice sorgen wir dafür, dass Ihre PV-Anlage optimal funktioniert und langfristig effizient arbeitet. Verlassen Sie sich auf unser erfahrenes Team, um die Leistung und Langlebigkeit Ihrer Anlage zu gewährleisten.",
         "image": "/images/5a6815e9-a74c-41e1-92c9-c4104434b9fd.png"
+      }
+    ]
+  },
+  "projects": {
+    "headline": "Unsere Referenzen",
+    "projects": [
+      {
+        "title": "Forstner Mühle",
+        "address": "Mühlenstraße 30, 4502 St. Marien",
+        "area": "1400m² PV",
+        "image": "/images/projects/project1.png",
+        "alt": "Forstner Mühle image",
+        "link": "https://www.forstnermuehle.at/"
+      },
+      {
+        "title": "Mehler Elektrotechnik",
+        "address": "Lange G. 3, 4493 Wolfern",
+        "area": "7000m² PV",
+        "image": "/images/projects/project2.png",
+        "alt": "Mehler Elektrotechnik image",
+        "link": "https://www.mehler.at/de/"
+      },
+      {
+        "title": "Reitbauer Sägewerk-Mühle-Mischfutter",
+        "address": "Vestenthal 19, A-4431 Haidershofen",
+        "area": "8000m² PV",
+        "image": "/images/projects/project3.png",
+        "alt": "Reitbauer image",
+        "link": "https://www.reitbauer.co.at/"
       }
     ]
   },

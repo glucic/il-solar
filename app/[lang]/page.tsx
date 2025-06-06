@@ -3,9 +3,9 @@ import {getDictionary} from './dictionaries';
 import {ThemeProvider} from 'next-themes';
 import {
     ComparisonSection,
-    ContactSection,
+    ContactSection, FooterSection,
     GallerySection,
-    MainSection,
+    MainSection, ProjectSection,
     ServicesSection,
     WhySection
 } from '@/components/sections';
@@ -48,6 +48,7 @@ export default async function Page({
                 </section>
                 <ComparisonSection/>
                 <ServicesSection dict={dict}/>
+                <ProjectSection dict={dict} />
                 <section className="relative min-h-screen w-full h-[100vh] overflow-hidden">
                     <video
                         className="absolute inset-0 w-full h-full object-cover"
@@ -65,6 +66,7 @@ export default async function Page({
                 </section>
                 <GallerySection/>
                 <ContactSection dict={dict}/>
+                <FooterSection dict={dict}/>
             </ThemeProvider>
         </div>
     );

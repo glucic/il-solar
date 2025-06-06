@@ -3,6 +3,7 @@
 
 import {motion} from "motion/react";
 import Image from 'next/image';
+import Link from "next/link";
 
 export interface MainSectionDict {
     main: {
@@ -17,8 +18,11 @@ export interface MainSectionDict {
 
 export function MainSection({dict}: { dict: MainSectionDict }) {
     return (
-        <section id="main" className="relative w-full min-h-screen text-white">
-            {/* Background image layer (no pointer interference) */}
+        <section
+            id="main"
+            className="relative w-full min-h-screen text-white flex items-center justify-center"
+        >
+            {/* Background image layer */}
             <div className="absolute inset-0 -z-10 pointer-events-none">
                 <Image
                     src="/images/8d6a9818-82e2-4b76-b767-283df978fdbf.png"
@@ -30,13 +34,13 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
             </div>
 
             {/* Content */}
-            <div className="px-4 py-10 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 md:py-20">
+            <div className="w-full px-4 py-16 sm:py-20 sm:px-6 md:px-8 lg:px-16 xl:px-24 2xl:px-32 max-w-6xl">
                 <h1 className="uppercase text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl max-w-5xl mx-auto leading-tight text-white drop-shadow-lg">
                     {dict.main.headline.split(" ").map((word, index) => (
                         <motion.span
                             key={index}
-                            initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-                            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                            initial={{opacity: 0, filter: "blur(4px)", y: 10}}
+                            animate={{opacity: 1, filter: "blur(0px)", y: 0}}
                             transition={{
                                 duration: 0.3,
                                 delay: index * 0.1,
@@ -48,8 +52,8 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
                         </motion.span>
                     ))}
                     <motion.span
-                        initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-                        animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                        initial={{opacity: 0, filter: "blur(4px)", y: 10}}
+                        animate={{opacity: 1, filter: "blur(0px)", y: 0}}
                         transition={{
                             duration: 0.3,
                             delay: dict.main.headline.split(" ").length * 0.1,
@@ -94,14 +98,20 @@ export function MainSection({dict}: { dict: MainSectionDict }) {
                     transition={{duration: 0.3, delay: 1}}
                     className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4"
                 >
-                    <button
-                        className="w-64 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] px-6 py-3 font-medium transition-all hover:opacity-90">
-                        {dict.main.services}
-                    </button>
-                    <button
-                        className="w-64 rounded-xl border border-white/40 bg-white/10 text-white px-6 py-3 font-medium transition-all hover:bg-white/20">
-                        {dict.main.contact}
-                    </button>
+                    <Link href="#services" passHref>
+                        <button
+                            className="w-64 rounded-xl bg-[var(--primary)] text-[var(--primary-foreground)] px-6 py-3 font-medium transition-all hover:opacity-90"
+                        >
+                            {dict.main.services}
+                        </button>
+                    </Link>
+                    <Link href="#contact" passHref>
+                        <button
+                            className="w-64 rounded-xl border border-white/40 bg-white/10 text-white px-6 py-3 font-medium transition-all hover:bg-white/20"
+                        >
+                            {dict.main.contact}
+                        </button>
+                    </Link>
                 </motion.div>
             </div>
         </section>

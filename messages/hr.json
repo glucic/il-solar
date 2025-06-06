@@ -1,38 +1,38 @@
 {
   "nav": {
-    "main": "Start",
-    "why": "Warum",
-    "comparison": "Vergleich",
-    "services": "Leistungen",
-    "gallery": "Galerie",
+    "why": "Zašto",
+    "comparison": "Usporedba",
+    "services": "Usluge",
+    "projects": "Reference",
+    "gallery": "Galerija",
     "contact": "Kontakt"
   },
   "main": {
     "headline": "Dobrodošli u",
     "subtext": "IL-Solar je vaš pouzdan partner za čišćenje i održavanje fotonaponskih sustava.",
-    "about": "Od 2023. godine pružamo našim klijentima vrhunsku uslugu.",
-    "team": "Naš iskusni tim brine se o specifičnim zahtjevima vašeg sustava i osigurava optimalan učinak. Kontaktirajte nas još danas i pripremit ćemo vam osobnu ponudu!",
+    "about": "Od 2023. godine nudimo vrhunsku uslugu našim klijentima.",
+    "team": "Naš iskusan tim brine se o specifičnim zahtjevima vašeg sustava i osigurava optimalne performanse. Kontaktirajte nas već danas i pripremit ćemo vam osobnu ponudu!",
     "services": "Naše usluge",
     "contact": "Kontaktirajte nas"
   },
   "why": {
-    "headline": "Zašto bih trebao/la čistiti svoj sustav?",
+    "headline": "Zašto bih trebao čistiti svoj sustav?",
     "reasons": [
       {
         "title": "01",
-        "description": "Povećanje učinkovitosti: Prljavština, prašina, lišće i drugi ostaci mogu značajno smanjiti učinkovitost solarnih panela. Redovito čišćenje osigurava optimalan rad modula i time maksimizira proizvodnju energije."
+        "description": "Povećanje učinkovitosti: Prljavština, prašina, lišće i druge naslage mogu znatno smanjiti učinkovitost solarnih modula. Redovito čišćenje osigurava optimalan rad i maksimalnu proizvodnju energije."
       },
       {
         "title": "02",
-        "description": "Dugoročno očuvanje vrijednosti: Čist fotonaponski sustav ima duži vijek trajanja. Naslage mogu uzrokovati oštećenja na modulima, što u najgorem slučaju može dovesti do skupih popravaka ili prijevremene zamjene."
+        "description": "Očuvanje vrijednosti: Čist PV sustav ima duži vijek trajanja. Naslage mogu uzrokovati oštećenja na modulima, što može dovesti do skupih popravaka ili prijevremene zamjene."
       },
       {
         "title": "03",
-        "description": "Sigurnosni aspekti: Profesionalne usluge čišćenja obučene su i opremljene za sigurno izvođenje čišćenja. Radovi na visini i rukovanje električnim instalacijama trebaju biti obavljeni od strane stručnjaka kako bi se izbjegle nezgode."
+        "description": "Sigurnost: Profesionalne usluge čišćenja obavljaju obučeni stručnjaci s odgovarajućom opremom, čime se osigurava sigurnost tijekom rada na visinama i s električnim komponentama."
       },
       {
         "title": "04",
-        "description": "Pristup teško dostupnim mjestima: Profesionalni pružatelji usluga imaju potrebnu opremu i iskustvo za čišćenje i teško dostupnih područja koja možda nisu dostupna laicima."
+        "description": "Pristup teško dostupnim mjestima: Profesionalci imaju potrebnu opremu i iskustvo za čišćenje dijelova koji su amaterima teško dostupni."
       }
     ]
   },
@@ -41,27 +41,56 @@
     "services": [
       {
         "title": "Savjetovanje s klijentima",
-        "description": "Zadovoljstvo naših klijenata nam je na prvom mjestu. Pružamo vrhunsku uslugu i aktivno se prilagođavamo potrebama klijenata. U razgovorima s klijentima stavljamo poseban naglasak na osobno i individualno savjetovanje kako bismo pronašli najbolje moguće rješenje za svakog klijenta.",
-        "image": "/images/img_6.png"
+        "description": "Zadovoljstvo naših klijenata nam je na prvom mjestu. Nudimo vrhunsku uslugu i aktivno se prilagođavamo njihovim potrebama. U razgovorima s klijentima pridajemo veliku važnost osobnom i individualnom pristupu kako bismo pronašli najbolje rješenje za svakoga.",
+        "image": "/images/88286d61-da07-4fe7-b13e-5f42cea8b618.png"
       },
       {
         "title": "Čišćenje",
-        "description": "Naše usluge čišćenja fotonaponskih sustava odlikuju se korištenjem najsuvremenije i najučinkovitije opreme na tržištu. Uz inovativnu tehnologiju i iskusan tim osiguravamo temeljito i nježno čišćenje vašeg fotonaponskog sustava. Našom profesionalnom uslugom čišćenja maksimiziramo učinkovitost vašeg sustava kako bismo vam osigurali optimalan prinos energije. Oslonite se na nas za pouzdano i kvalitetno čišćenje.",
-        "image": "/images/img_7.png"
+        "description": "Naše usluge čišćenja PV sustava koriste najsuvremeniju i najučinkovitiju opremu na tržištu. Uz inovativnu tehnologiju i iskusni tim, osiguravamo temeljito i nježno čišćenje vaše fotonaponske elektrane. Profesionalnim pristupom maksimiziramo učinkovitost i iznos proizvedene energije.",
+        "image": "/images/c48e1f64-eac7-4dcb-826d-92568aa7b045.png"
       },
       {
         "title": "Održavanje",
-        "description": "Naša usluga obuhvaća ne samo čišćenje, već i sveobuhvatno održavanje fotonaponskih sustava. To uključuje provjeru panela, pregled ožičenja i inspekciju montažnog sustava. Našim profesionalnim servisom održavanja osiguravamo optimalan rad i dugoročnu učinkovitost vašeg sustava. Vjerujte našem iskusnom timu kako biste osigurali dugovječnost i učinkovitost vašeg sustava.",
+        "description": "Naša usluga uključuje ne samo čišćenje, već i sveobuhvatno održavanje PV sustava. To uključuje provjeru panela, kabela i montažnog sustava. Naš profesionalni tim osigurava dugotrajan i učinkovit rad vaše solarne elektrane.",
         "image": "/images/5a6815e9-a74c-41e1-92c9-c4104434b9fd.png"
       }
     ]
   },
+  "projects": {
+    "headline": "Naše reference",
+    "projects": [
+      {
+        "title": "Forstner Mühle",
+        "address": "Mühlenstraße 30, 4502 St. Marien",
+        "area": "1400m² PV",
+        "image": "/images/projects/project1.png",
+        "alt": "Slika Forstner Mühle",
+        "link": "https://www.forstnermuehle.at/"
+      },
+      {
+        "title": "Mehler Elektrotechnik",
+        "address": "Lange G. 3, 4493 Wolfern",
+        "area": "7000m² PV",
+        "image": "/images/projects/project2.png",
+        "alt": "Slika Mehler Elektrotechnik",
+        "link": "https://www.mehler.at/de/"
+      },
+      {
+        "title": "Reitbauer Pila-Mlin-Stočna hrana",
+        "address": "Vestenthal 19, A-4431 Haidershofen",
+        "area": "8000m² PV",
+        "image": "/images/projects/project3.png",
+        "alt": "Slika Reitbauer",
+        "link": "https://www.reitbauer.co.at/"
+      }
+    ]
+  },
   "contact": {
-    "headline": "Kontakt aufnehmen",
+    "headline": "Kontaktirajte nas",
     "phoneNumber": "+43 6606129856",
     "email": "office@il-solar.net",
-    "firstname": "Vorname",
-    "lastname": "Nachname",
-    "message": "Nachricht"
+    "firstname": "Ime",
+    "lastname": "Prezime",
+    "message": "Poruka"
   }
 }
