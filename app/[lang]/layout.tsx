@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Roboto} from "next/font/google";
 import "@/app/globals.css";
 import {ReactNode} from "react";
+import { CookiePreferencesProvider } from "@/components/elements/CookiePreferenceContextProvider";
 
 const roboto = Roboto({
     subsets: ['latin'],
@@ -30,7 +31,11 @@ export default async function LocaleLayout({
 
     return (
         <html lang={lang} className={`${roboto.variable} scroll-smooth`} suppressHydrationWarning>
-        <body className="font-sans antialiased bg-[var(--background)] text-[var(--foreground)]">{children}</body>
+            <body className="font-sans antialiased bg-[var(--background)] text-[var(--foreground)]">
+            <CookiePreferencesProvider>
+                {children}
+            </CookiePreferencesProvider>
+            </body>
         </html>
     );
 }

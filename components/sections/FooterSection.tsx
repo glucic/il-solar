@@ -5,6 +5,7 @@ import Image from "next/image";
 import {FaFacebookF, FaInstagram, FaLinkedinIn} from "react-icons/fa";
 import {HiDocumentText} from "react-icons/hi";
 import Link from "next/link";
+import {useCookiePreferences} from "@/components/elements/CookiePreferenceContextProvider";
 
 interface FooterDict {
     nav: {
@@ -22,6 +23,7 @@ interface FooterDict {
 
 export const FooterSection = ({dict}: { dict: FooterDict }) => {
     const currentYear = new Date().getFullYear();
+    const {open} = useCookiePreferences();
 
     return (
         <footer className="w-full border-t border-gray-200 bg-white dark:bg-gray-900 px-4 sm:px-6 py-8">
@@ -90,13 +92,20 @@ export const FooterSection = ({dict}: { dict: FooterDict }) => {
                             </li>
                             <li>
                                 <Link
-                                    href="/agb"
+                                    href="/agb.pdf"
                                     className="flex items-center gap-1 font-semibold hover:underline"
                                 >
                                     <HiDocumentText className="w-4 h-4"/>
                                     AGB
                                 </Link>
                             </li>
+                            <ul className="mt-6 text-sm text-gray-500 dark:text-gray-400">
+                                <li>
+                                    <button onClick={open} className="underline hover:text-[var(--accent)] transition">
+                                        Cookie-Einstellungen
+                                    </button>
+                                </li>
+                            </ul>
                         </ul>
                     </div>
 
