@@ -1,5 +1,5 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
+import {useReducedMotion} from "framer-motion";
 import React from "react";
 
 export interface WhySectionDict {
@@ -12,7 +12,7 @@ export interface WhySectionDict {
     };
 }
 
-export function WhySection({ dict }: { dict: WhySectionDict }) {
+export function WhySection({dict}: { dict: WhySectionDict }) {
     const shouldReduceMotion = useReducedMotion();
 
     return (
@@ -31,12 +31,8 @@ export function WhySection({ dict }: { dict: WhySectionDict }) {
                 {/* Reasons Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 w-full max-w-4xl text-left">
                     {dict.why.reasons.map((reason, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.1 }}
-                            viewport={{ once: true }}
                             className="flex gap-4 p-5 sm:p-6 rounded-3xl bg-[var(--card)] text-[var(--card-foreground)] border border-[var(--border)] shadow-md transition-transform duration-200 hover:scale-[1.015] hover:shadow-lg"
                         >
                             {/* Number */}
@@ -50,7 +46,7 @@ export function WhySection({ dict }: { dict: WhySectionDict }) {
                                     {reason.description}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

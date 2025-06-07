@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface NavbarProps {
     dict: {
-        nav: Record<string, string>; // e.g., { main: "Start", why: "Warum", ... }
+        nav: Record<string, string>;
     };
 }
 
@@ -17,21 +17,24 @@ export function Navbar({dict}: NavbarProps) {
 
     // Track active section in view
     useEffect(() => {
+        const sectionIds = Object.keys(dict.nav);
         const observer = new IntersectionObserver(
             (entries) => {
-                for (const entry of entries) {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
+                const visible = entries
+                    .filter(entry => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+                if (visible.length > 0) {
+                    setActiveSection(visible[0].target.id);
                 }
             },
             {
-                rootMargin: "-30% 0px -60% 0px",
-                threshold: 0.1,
+                rootMargin: "-40% 0px -40% 0px",
+                threshold: Array.from({length: 21}, (_, i) => i * 0.05), // finer grain
             }
         );
 
-        Object.keys(dict.nav).forEach((id) => {
+        sectionIds.forEach((id) => {
             const el = document.getElementById(id);
             if (el) observer.observe(el);
         });
@@ -59,6 +62,7 @@ export function Navbar({dict}: NavbarProps) {
                         <li key={id}>
                             <a
                                 href={`#${id}`}
+                                onClick={() => setActiveSection(id)}
                                 className={`transition ${
                                     activeSection === id
                                         ? "underline underline-offset-4"
@@ -94,12 +98,15 @@ export function Navbar({dict}: NavbarProps) {
                             <li key={id}>
                                 <a
                                     href={`#${id}`}
+                                    onClick={() => {
+                                        setActiveSection(id);
+                                        closeMenu();
+                                    }}
                                     className={`block transition ${
                                         activeSection === id
                                             ? "underline underline-offset-4"
                                             : "opacity-80 hover:opacity-100"
                                     }`}
-                                    onClick={closeMenu}
                                 >
                                     {label}
                                 </a>

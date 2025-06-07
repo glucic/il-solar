@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import {Compare} from "@/components/ui/compare";
-import {motion} from "framer-motion";
-import useWindowSize from "@/lib/hooks/useWindowSize"; // Optional: add if you want to detect screen width
+import useWindowSize from "@/lib/hooks/useWindowSize";
 
 export function ComparisonSection() {
     const width = useWindowSize();
@@ -32,12 +31,8 @@ export function ComparisonSection() {
                     before: "/images/1b2a5753-8a3f-497a-a959-aa1c8d837534.png",
                     after: "/images/607473df-3add-49a7-83f5-f8693e54444a.png"
                 }].map((imgPair, index) => (
-                    <motion.div
+                    <div
                         key={index}
-                        initial={{opacity: 0, y: 20}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.6, delay: index * 0.2}}
-                        viewport={{once: true}}
                         className="w-full max-w-[900px] rounded-xl shadow-lg overflow-hidden"
                     >
                         <Compare
@@ -48,7 +43,7 @@ export function ComparisonSection() {
                             className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[700px] rounded-xl"
                             slideMode={isMobile ? "drag" : "hover"}
                         />
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

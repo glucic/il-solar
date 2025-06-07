@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import {motion} from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
@@ -33,12 +32,8 @@ export function ProjectSection({dict}: { dict: ProjectsDict }) {
 
             <div className="grid gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {dict.projects.projects.map((project, index) => (
-                    <motion.div
+                    <div
                         key={index}
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
-                        transition={{duration: 0.6, delay: index * 0.2}}
-                        viewport={{once: true}}
                         className="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
                     >
                         {/* Image */}
@@ -67,7 +62,7 @@ export function ProjectSection({dict}: { dict: ProjectsDict }) {
                                 {project.area}
                             </p>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </section>

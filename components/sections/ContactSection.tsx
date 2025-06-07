@@ -59,11 +59,8 @@ export function ContactSection({dict}: { dict: ContactDict }) {
             </motion.div>
 
             <div className="w-full flex justify-center">
-                <motion.form
+                <form
                     onSubmit={handleSubmit}
-                    initial={{opacity: 0, x: 20}}
-                    whileInView={{opacity: 1, x: 0}}
-                    transition={{duration: 0.6, delay: 0.2}}
                     className="space-y-6 w-full max-w-2xl"
                 >
                     <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -107,28 +104,23 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                     </LabelInputContainer>
 
                     <LabelInputContainer>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder={dict.contact.message}
-                            value={form.message}
-                            onChange={handleChange}
-                            rows={6}
-                            required
-                            className="w-full px-4 py-3 text-base rounded-md bg-white text-[var(--primary)]
-                            placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-none transition"
-                        />
+      <textarea
+          id="message"
+          name="message"
+          placeholder={dict.contact.message}
+          value={form.message}
+          onChange={handleChange}
+          rows={6}
+          required
+          className="w-full px-4 py-3 text-base rounded-md bg-white text-[var(--primary)]
+        placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-none transition"
+      />
                     </LabelInputContainer>
 
                     {submitted && (
-                        <motion.p
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            transition={{duration: 0.3}}
-                            className="text-green-200 font-medium"
-                        >
+                        <p className="text-green-200 font-medium">
                             Danke! Ihre Nachricht wurde gesendet.
-                        </motion.p>
+                        </p>
                     )}
 
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-6">
@@ -141,16 +133,15 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                             }, {
                                 icon: FaLinkedinIn, href: "https://linkedin.com"
                             }].map(({icon: Icon, href}, i) => (
-                                <motion.a
+                                <a
                                     key={i}
                                     href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    whileHover={{scale: 1.2}}
-                                    transition={{type: "spring", stiffness: 300}}
+                                    className="hover:text-[var(--accent)] transition transform hover:scale-110"
                                 >
-                                    <Icon className="hover:text-[var(--accent)] transition"/>
-                                </motion.a>
+                                    <Icon/>
+                                </a>
                             ))}
                         </div>
 
@@ -166,7 +157,7 @@ export function ContactSection({dict}: { dict: ContactDict }) {
                             <span className="absolute inset-0 rounded-lg ring-1 ring-white/10"/>
                         </motion.button>
                     </div>
-                </motion.form>
+                </form>
             </div>
         </section>
     );
