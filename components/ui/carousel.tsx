@@ -101,35 +101,46 @@ export function Carousel({slides}: CarouselProps) {
 
     const [startX, setStartX] = useState<number | null>(null);
     const [endX, setEndX] = useState<number | null>(null);
+    const [endY, setEndY] = useState<number | null>(null);
+    const [startY, setStartY] = useState<number | null>(null);
 
     const handleTouchStart = (e: React.TouchEvent) => {
         setStartX(e.touches[0].clientX);
+        setStartY(e.touches[0].clientY);
     };
 
     const handleTouchMove = (e: React.TouchEvent) => {
         setEndX(e.touches[0].clientX);
+        setEndY(e.touches[0].clientY);
     };
 
     const handleTouchEnd = () => {
-        if (startX !== null && endX !== null) {
-            const distance = startX - endX;
-            const threshold = 50; // minimum px swipe to trigger
+        if (startX !== null && endX !== null && startY !== null && endY !== null) {
+            const deltaX = startX - endX;
+            const deltaY = startY - endY;
 
-            if (distance > threshold) handleNextClick(); // swipe left
-            else if (distance < -threshold) handlePreviousClick(); // swipe right
+            if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+                if (deltaX > 0) handleNextClick(); // swipe left
+                else handlePreviousClick();        // swipe right
+            }
         }
 
         setStartX(null);
         setEndX(null);
+        setStartY(null);
+        setEndY(null);
     };
 
     return (
         <div
-            className="relative w-screen h-screen overflow-hidden"
-            aria-labelledby={`carousel-heading-${id}`}
+            className="relative w-screen h-[90vh] md:h-screen overflow-x-hidden touch-pan-y"
+            style={{
+                WebkitOverflowScrolling: "touch",
+                touchAction: "pan-y"
+            }}
         >
             <ul
-                className="flex transition-transform duration-700 ease-in-out touch-pan-x"
+                className="flex transition-transform duration-700 ease-in-out"
                 style={{
                     transform: `translateX(-${current * 100}vw)`,
                     width: `${slides.length * 100}vw`,
