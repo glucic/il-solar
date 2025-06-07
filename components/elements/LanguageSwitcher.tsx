@@ -1,13 +1,13 @@
 'use client';
 
-import { Popover } from '@headlessui/react';
-import { useRouter, usePathname } from 'next/navigation';
+import {Popover} from '@headlessui/react';
+import {useRouter, usePathname} from 'next/navigation';
 import Flag from 'react-world-flags';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 const languages = [
-    { code: 'de', label: 'Deutsch', flag: 'DE' },
-    { code: 'hr', label: 'Hrvatski', flag: 'HR' },
+    {code: 'de', label: 'Deutsch', flag: 'DE'},
+    {code: 'hr', label: 'Hrvatski', flag: 'HR'},
 ];
 
 export default function LanguageSelector() {
@@ -27,7 +27,7 @@ export default function LanguageSelector() {
     // Detect language from URL or localStorage
     useEffect(() => {
         const fromPath =
-            languages.find((lang) => pathname.startsWith(`/${lang.code}`)) || null;
+            languages.find((lang) => pathname?.startsWith(`/${lang.code}`)) || null;
         const stored = localStorage.getItem('preferred-language');
 
         const preferredLang =
@@ -41,8 +41,10 @@ export default function LanguageSelector() {
     // Switch language + store in localStorage
     const switchLanguage = (langCode: string) => {
         localStorage.setItem('preferred-language', langCode);
-        const newPath = pathname.replace(/^\/(de|hr)/, `/${langCode}`);
-        router.push(newPath);
+        const newPath = pathname?.replace(/^\/(de|hr)/, `/${langCode}`);
+        if (newPath != null) {
+            router.push(newPath);
+        }
     };
 
     return (
@@ -52,7 +54,7 @@ export default function LanguageSelector() {
                bg-transparent text-[var(--primary-foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)]
                focus:outline-none focus:ring-0"
             >
-                <Flag code={currentLang.flag} className="h-5 w-5" />
+                <Flag code={currentLang.flag} className="h-5 w-5"/>
                 <span>{currentLang.label}</span>
             </Popover.Button>
 
@@ -69,7 +71,7 @@ export default function LanguageSelector() {
                             className="flex items-center w-full px-4 py-2 text-sm text-left
                            hover:bg-[var(--background)] hover:text-[var(--foreground)] transition"
                         >
-                            <Flag code={lang.flag} className="h-5 w-5 mr-2" />
+                            <Flag code={lang.flag} className="h-5 w-5 mr-2"/>
                             {lang.label}
                         </button>
                     ))}

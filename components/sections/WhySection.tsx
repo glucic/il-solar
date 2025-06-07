@@ -13,8 +13,7 @@ export interface WhySectionDict {
 }
 
 export function WhySection({dict}: { dict: WhySectionDict }) {
-    const shouldReduceMotion = useReducedMotion();
-
+    useReducedMotion();
     return (
         <section
             id="why"
