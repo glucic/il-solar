@@ -10,9 +10,8 @@ import {motion} from "framer-motion";
 
 interface FooterDict {
     nav: {
-        why: string;
-        comparison: string;
         services: string;
+        projects: string;
         gallery: string;
         contact: string;
     };
@@ -65,9 +64,8 @@ export const FooterSection = ({dict}: { dict: FooterDict }) => {
                         Navigation
                     </h3>
                     <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                        <li><Link href="#why" className="hover:underline">{dict.nav.why}</Link></li>
-                        <li><Link href="#comparison" className="hover:underline">{dict.nav.comparison}</Link></li>
                         <li><Link href="#services" className="hover:underline">{dict.nav.services}</Link></li>
+                        <li><Link href="#projects" className="hover:underline">{dict.nav.projects}</Link></li>
                         <li><Link href="#gallery" className="hover:underline">{dict.nav.gallery}</Link></li>
                         <li><Link href="#contact" className="hover:underline">{dict.nav.contact}</Link></li>
                         <li>
