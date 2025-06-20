@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import {FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok} from "react-icons/fa";
+import {FaInstagram, FaTiktok} from "react-icons/fa";
 import {HiDocumentText} from "react-icons/hi";
 import Link from "next/link";
 import {useCookiePreferences} from "@/components/elements/CookiePreferenceContextProvider";
