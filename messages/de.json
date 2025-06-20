@@ -1,9 +1,7 @@
 {
   "nav": {
-    "why": "Warum",
-    "comparison": "Vergleich",
     "services": "Leistungen",
-    "projects": "References",
+    "projects": "Referenzen",
     "gallery": "Galerie",
     "contact": "Kontakt"
   },
@@ -35,6 +33,10 @@
         "description": "Zugang zu schwer erreichbaren Stellen: Professionelle Dienstleister haben das nötige Equipment und die Erfahrung, um auch schwierige Bereiche zu reinigen, die für Laien möglicherweise nicht zugänglich sind."
       }
     ]
+  },
+  "comparison": {
+    "headline": "Vorher & Nachher",
+    "subtext": "Sehen Sie selbst den Unterschied: Unsere Reinigungs- und Wartungsservices verbessern nicht nur die\n                    Optik Ihrer Photovoltaikanlage, sondern auch deren Effizienz. Der Vorher-Nachher-Vergleich zeigt, wie stark die Ergebnisse wirklich sind."
   },
   "services": {
     "headline": "Unsere Leistungen",
@@ -86,7 +88,7 @@
     ]
   },
   "contact": {
-    "headline": "Kontakt aufnehmen",
+    "headline": "Kontaktieren Sie uns",
     "phoneNumber": "+43 6606129856",
     "email": "office@il-solar.net",
     "firstname": "Vorname",

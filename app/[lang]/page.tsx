@@ -46,7 +46,7 @@ export default async function Page({
                         </h2>
                     </div>
                 </section>
-                <ComparisonSection/>
+                <ComparisonSection dict={dict}/>
                 <ServicesSection dict={dict}/>
                 <ProjectSection dict={dict} />
                 <section className="relative min-h-screen w-full h-[100vh] overflow-hidden">

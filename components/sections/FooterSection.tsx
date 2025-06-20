@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import {FaFacebookF, FaInstagram, FaLinkedinIn} from "react-icons/fa";
+import {FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok} from "react-icons/fa";
 import {HiDocumentText} from "react-icons/hi";
 import Link from "next/link";
 import {useCookiePreferences} from "@/components/elements/CookiePreferenceContextProvider";
@@ -97,9 +97,8 @@ export const FooterSection = ({dict}: { dict: FooterDict }) => {
                     </h3>
                     <div className="flex gap-4 text-lg">
                         {[
-                            {Icon: FaFacebookF, href: "https://facebook.com"},
-                            {Icon: FaInstagram, href: "https://instagram.com"},
-                            {Icon: FaLinkedinIn, href: "https://linkedin.com"},
+                            {Icon: FaInstagram, href: "https://www.instagram.com/il_solar_1?igsh=MWxlMWdwbjdpMjNhdA=="},
+                            {Icon: FaTiktok, href: "https://www.tiktok.com/@ilsolar1?_t=ZN-8xN0U4oQ4m2&_r=1"},
                         ].map(({Icon, href}, i) => (
                             <motion.a
                                 key={i}
@@ -109,7 +108,7 @@ export const FooterSection = ({dict}: { dict: FooterDict }) => {
                                 whileHover={{scale: 1.2}}
                                 className="text-gray-600 dark:text-gray-300 hover:text-[var(--accent)] transition"
                             >
-                                <Icon />
+                                <Icon/>
                             </motion.a>
                         ))}
                     </div>

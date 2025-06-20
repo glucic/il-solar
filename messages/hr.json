@@ -36,6 +36,10 @@
       }
     ]
   },
+  "comparison": {
+    "headline": "Prije i poslije",
+    "subtext": "Pogledajte razliku: Naše usluge čišćenja i održavanja ne poboljšavaju samo izgled vaše fotonaponske elektrane, već i njezinu učinkovitost. Usporedba prije i poslije jasno pokazuje koliko su rezultati zapravo snažni."
+  },
   "services": {
     "headline": "Naše usluge",
     "services": [

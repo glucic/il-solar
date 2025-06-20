@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { SendHorizonal } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {FaInstagram, FaTiktok} from "react-icons/fa";
 
 export interface ContactDict {
     contact: {
@@ -60,21 +60,25 @@ export function ContactSection({ dict }: { dict: ContactDict }) {
     return (
         <section
             id="contact"
-            className="min-h-screen w-full flex flex-col items-center justify-center bg-[var(--primary)] text-[var(--primary-foreground)] px-4 sm:px-6 py-12 text-center transition-colors"
+            className="min-h-[90vh] md:min-h-screen w-full px-4 sm:px-6 py-12 flex flex-col items-center justify-center text-center bg-[var(--primary)] text-[var(--primary-foreground)] transition-colors"
         >
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
+                className="mb-10 sm:mb-12"
             >
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 uppercase">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold uppercase leading-tight">
                     {dict.contact.headline}
                 </h2>
             </motion.div>
 
-            <div className="w-full flex justify-center">
-                <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-2xl">
-                    <div className="flex flex-col md:flex-row gap-4 w-full">
+            <div className="w-full max-w-xl sm:max-w-2xl">
+                <form
+                    onSubmit={handleSubmit}
+                    className="flex flex-col gap-6"
+                >
+                    <div className="flex flex-col sm:flex-row gap-4">
                         <LabelInputContainer>
                             <Input
                                 id="firstName"
@@ -84,9 +88,10 @@ export function ContactSection({ dict }: { dict: ContactDict }) {
                                 value={form.firstName}
                                 onChange={handleChange}
                                 required
-                                className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
+                                className="scroll-mt-28 bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
                             />
                         </LabelInputContainer>
+
                         <LabelInputContainer>
                             <Input
                                 id="lastName"
@@ -96,7 +101,7 @@ export function ContactSection({ dict }: { dict: ContactDict }) {
                                 value={form.lastName}
                                 onChange={handleChange}
                                 required
-                                className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
+                                className="scroll-mt-28 bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
                             />
                         </LabelInputContainer>
                     </div>
@@ -110,21 +115,21 @@ export function ContactSection({ dict }: { dict: ContactDict }) {
                             value={form.email}
                             onChange={handleChange}
                             required
-                            className="bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
+                            className="scroll-mt-28 bg-white border-b-2 border-[var(--accent)] text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:border-[var(--primary)]"
                         />
                     </LabelInputContainer>
 
                     <LabelInputContainer>
-            <textarea
-                id="message"
-                name="message"
-                placeholder={dict.contact.message}
-                value={form.message}
-                onChange={handleChange}
-                rows={6}
-                required
-                className="w-full px-4 py-3 text-base rounded-md bg-white text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-none transition"
-            />
+        <textarea
+            id="message"
+            name="message"
+            placeholder={dict.contact.message}
+            value={form.message}
+            onChange={handleChange}
+            rows={6}
+            required
+            className="scroll-mt-28 w-full px-4 py-3 text-base rounded-md bg-white text-[var(--primary)] placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] resize-none"
+        />
                     </LabelInputContainer>
 
                     {submitted && (
@@ -133,12 +138,11 @@ export function ContactSection({ dict }: { dict: ContactDict }) {
                         </p>
                     )}
 
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 mt-6">
-                        <div className="flex items-center gap-6 text-white text-3xl">
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-6 mt-6">
+                        <div className="flex items-center gap-6 text-white text-2xl sm:text-3xl">
                             {[
-                                { icon: FaFacebookF, href: "https://facebook.com" },
-                                { icon: FaInstagram, href: "https://instagram.com" },
-                                { icon: FaLinkedinIn, href: "https://linkedin.com" },
+                                { icon: FaInstagram, href: "https://www.instagram.com/il_solar_1?igsh=MWxlMWdwbjdpMjNhdA==" },
+                                { icon: FaTiktok, href: "https://www.tiktok.com/@ilsolar1?_t=ZN-8xN0U4oQ4m2&_r=1" },
                             ].map(({ icon: Icon, href }, i) => (
                                 <a
                                     key={i}
